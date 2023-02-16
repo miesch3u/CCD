@@ -1,6 +1,6 @@
 <?php
 
-namespace afficheurs;
+namespace Natha\Ccd\afficheurs;
 
 class PageAcceuil extends Afficheur
 {

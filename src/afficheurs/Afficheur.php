@@ -1,6 +1,6 @@
 <?php
 
-namespace iutnc\netVOD\afficheur;
+namespace Natha\Ccd\afficheurs;
 
 abstract class Afficheur
 {

@@ -38,7 +38,7 @@ class PageConnexion extends Afficheur
                 <input class="buttonslot" type="submit" value="Se connecter"><br>
             </form>
             <div id="redirection">
-                <p class="aligner">Toujours pas inscrit ? <a class="nommer2" href="/Index.php?action=inscription">Inscrivez-vous !</a></p>
+                <p class="aligner">Toujours pas inscrit ? <a class="nommer2" href="?action=inscription">Inscrivez-vous !</a></p>
             </div>
             END;
         }

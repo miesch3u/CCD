@@ -100,7 +100,6 @@ class Dispatcher
         <a href="index.php">Accueil</a>
         <a href="index.php?action=connexion">Connexion</a>
         <a href="index.php?action=shopping">Shopping</a>
-        <a href="index.php?action=article">Article</a>
         <a href="index.php?action=panier">Panier</a>
         <a href="index.php?action=commande">Commande</a>
         <a href="index.php?action=profil">Profil</a>

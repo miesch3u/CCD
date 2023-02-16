@@ -1,9 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace netvod\auth;
+namespace auth;
 use netvod\user\User;
-use netvod\db\ConnectionFactory;
-use netvod\audio\lists\Playlist;
+use db\ConnectionFactory;
 use netvod\exception\AccessControlException;
 //Classe Auth
 class Auth{

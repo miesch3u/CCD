@@ -3,11 +3,10 @@
 
 declare(strict_types=1);
 
-namespace netvod\action;
+namespace action;
 
-use netvod\auth\Auth;
-use netvod\db\ConnectionFactory;
-
+use db\ConnectionFactory;
+use auth\Authentication;
 class AddUserAction extends Action
 {
 

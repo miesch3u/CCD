@@ -1,5 +1,6 @@
 <?php
 
+
 namespace mywishlist\db;
 
 use PDO;

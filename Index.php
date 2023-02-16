@@ -1,5 +1,6 @@
 <?php
 
+
 use mywishlist\db\ConnectionFactory;
 use mywishlist\Dispatcher;
 

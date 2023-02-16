@@ -1,5 +1,6 @@
 <?php
 
+
 namespace mywishlist\afficheurs;
 
 abstract class Afficheur

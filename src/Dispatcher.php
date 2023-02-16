@@ -98,28 +98,29 @@ class Dispatcher
      * @return void, sachant que le rendu est écrit sur la page
      */
     private function renderPage(String $html) : void {
-        $res = <<<END
-        <!DOCTYPE html>
-        <html lang="fr" xmlns="http://www.w3.org/1999/html">
+        $res = "<!DOCTYPE html>
+        <html lang='fr' xmlns='http://www.w3.org/1999/html'>
         <head>
-            <meta charset="UTF-8">
+            <meta charset='UTF-8'>
             <title>Court-Circuit Voltaire</title>
-            <script src="src/javascript/le_Js.js" defer></script>
-            <link rel="stylesheet" href="src/css/base.css" />
+            <script src='src/javascript/le_Js.js' defer></script>
+            <link rel='stylesheet' href='src/css/base.css' />
         </head>
-        <header class="font">
-        <a class="gros" href="index.php">Court-Circuit Voltaire</a>
-        <a href="index.php?action=connexion">Connexion</a>
-        <a href="index.php?action=shopping">Shopping</a>
-        <a href="index.php?action=panier">Panier</a>
-        <a href="index.php?action=commande">Commande</a>
-        <a href="index.php?action=profil">Profil</a>
-        <a href="index.php?action=inscription">Inscription</a>
-        <a href="index.php?action=carte">Carte</a>
-        <a href="index.php?action=information">Information</a>
-        </header>
-        <body class="corp">
-        END;
+        <header class='font'>
+        <a class='gros' href='index.php'>Court-Circuit Voltaire</a>
+        <a href='index.php?action=connexion'>Connexion</a>
+        <a href='index.php?action=shopping'>Shopping</a>
+        <a href='index.php?action=panier'>Panier</a>
+        <a href='index.php?action=commande'>Commande</a>
+        <a href='index.php?action=profil'>Profil</a>
+        <a href='index.php?action=inscription'>Inscription</a>
+        <a href='index.php?action=carte'>Carte</a>
+        <a href='index.php?action=information'>Information</a>";
+        if (isset($_SESSION['user'])) if (unserialize($_SESSION['user'])->__get('role')==1) {
+            $res.="<a href='index.php?action=admin'>admin</a>";
+        }
+            $res.="</header>
+        <body class='corp'>";
 
         $res .= $html;
 

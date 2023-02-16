@@ -99,9 +99,7 @@ class Dispatcher
             <link rel="stylesheet" href="src/css/base.css" />
         </head>
         <header class="font">
-        <li class="element-tete">
-        <a>Court-Circuit Voltaire</a>
-        <a href="index.php">Accueil</a>
+        <a class="gros" href="index.php">Court-Circuit Voltaire</a>
         <a href="index.php?action=connexion">Connexion</a>
         <a href="index.php?action=shopping">Shopping</a>
         <a href="index.php?action=panier">Panier</a>
@@ -110,7 +108,6 @@ class Dispatcher
         <a href="index.php?action=inscription">Inscription</a>
         <a href="index.php?action=carte">Carte</a>
         <a href="index.php?action=information">Information</a>
-         </li>
         </header>
         <body class="corp">
         END;

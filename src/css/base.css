@@ -1,30 +1,76 @@
 .pack {
     position: relative;
 }
+.pack1 {
+    position: relative;
+    top:30vw;
+}
+.pack2 {
+    position: relative;
+    top:60vw;
+}
+.pack3 {
+    position: relative;
+    top:90vw;
+}
+
+.taille{
+   height:5vw;
+}
 
 .objet {
     position: absolute;
     top: 0;
 }
+
 .rectangle {
     left: 0;
-    border-bottom: 25vw solid #555;
+    border-bottom: 25vw solid #074c4c;
     border-right: 2vw solid transparent;
+    height: 0;
+    width: 75vw;
+}
+.rectangle1 {
+    right: 0;
+    border-bottom: 25vw solid #074c4c;
+    border-left: 2vw solid transparent;
     height: 0;
     width: 75vw;
 }
 
 .soustexte {
+    font-size:1.5em;
     top: 5vw;
     margin:5vw;
+    color: #ffffff;
+}
+.soustexte1 {
+    left:25vw;
+    font-size:1.5em;
+    top: 5vw;
+    margin:5vw;
+    color: #ffffff;
 }
 
 .titretexte {
+    font-size:3em;
     margin:5vw;
+    color: #FDC539;
+}
+.titretexte1 {
+    left:25vw;
+    font-size:3em;
+    margin:5vw;
+    color: #FDC539;
 }
 
 .image {
     left: 75vw;
+    height: 25vw;
+    width: 25vw;
+}
+.image1 {
+    right: 75vw;
     height: 25vw;
     width: 25vw;
 }
@@ -44,19 +90,20 @@
 }
 
 a{
-    margin:1.2vw;
+    margin:1vw;
 }
-
 a:link{
     color: #FDC539;
 }
-
 a:visited{
     color: #FDC539;
 }
-
 a:hover{
     color: #FF5F21FF;
+}
+
+.gros{
+    font-size:1.5em;
 }
 
 .image_pdt{

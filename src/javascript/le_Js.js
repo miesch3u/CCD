@@ -3,5 +3,5 @@ let boutonRecherche = () =>{
 }
 
 window.onload = ()=>{
-    document.getElementById('#recherche').onclick = boutonRecherche
+    document.querySelector('#rech').onclick = boutonRecherche
 }

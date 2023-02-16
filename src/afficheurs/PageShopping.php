@@ -14,7 +14,8 @@ class PageShopping extends Afficheur
 
     public function execute(): string
     {
-        $html = "<div style='display: flex;justify-content: space-around; flex-direction: row; flex-wrap: wrap'>";
+        $html = "<div style='display: flex; flex-direction: row'><button id='rech'type='button'>rechercher</button>"
+            ."<section style='display: flex;justify-content: space-around; flex-direction: column; flex-wrap: wrap'>";
         $req = $this->db->prepare("SELECT id,nom,prix,lieu from produit");
         $req->execute();
         while($row = $req->fetch()){
@@ -23,13 +24,13 @@ class PageShopping extends Afficheur
             $name = $row['nom'];
             $prix = $row['prix'];
             $lieu =$row['lieu'];
-            $html.="<strong>$name</strong><br>Prix : $prix<br>Provenance : $lieu<img src=\"src/img/$id.jpg\" alt=\"Image\">";
+            $html.="<div><strong>$name</strong><br>Prix : $prix<br>Provenance : $lieu<img class='image_pdt' src=\"src/img/$id.jpg\" alt=\"Image\"></div>";
 
         }
 
 
-        $html .="</div>";
-        $html.= "<button id='recherche'type='button'>rechercher</button>";
+        $html .="</section>";
+        $html.= "</div>";
 
         return $html;
     }

@@ -1,7 +1,7 @@
 .rectangle {
-    height: 5vw;
-    width: 25vw;
-    background-color: #074C4C;
+    height: 50px;
+    width: 100px;
+    background-color: #555;
 }
 
 .image {
@@ -22,4 +22,9 @@ margin:0;
 
 element-tete {
     margin:3vw;
+}
+
+.image_pdt{
+    height: 100px;
+    width: 100px;
 }

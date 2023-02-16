@@ -72,13 +72,26 @@ class Dispatcher
     private function renderPage(String $html) : void {
         $res = <<<END
         <!DOCTYPE html>
-        <html lang="fr">
+        <html lang="fr" xmlns="http://www.w3.org/1999/html">
         <head>
             <meta charset="UTF-8">
             <title>Court-Circuit Voltaire</title>
         </head>
         <header>
-        
+        <li>
+        <a>Court-Circuit Voltaire</a>
+        <a href="index.php">Accueil</a>
+        <a href="index.php?action=connexion">Connexion</a>
+        <a href="index.php?action=shopping">Shopping</a>
+        <a href="index.php?action=article">Article</a>
+        <a href="index.php?action=panier">Panier</a>
+        <a href="index.php?action=commande">Commande</a>
+        <a href="index.php?action=profil">Profil</a>
+        <a href="index.php?action=inscription">Inscription</a>
+        <a href="index.php?action=carte">Carte</a>
+        <a href="index.php?action=information">Information</a>
+         
+         </li>
         </header>
         <body class="">
         END;

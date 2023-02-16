@@ -1,6 +1,6 @@
 <?php
 
-namespace Natha\Ccd\afficheurs;
+namespace mywishlist\afficheurs;
 
 use mywishlist\db\ConnectionFactory;
 
@@ -29,6 +29,7 @@ class PageShopping extends Afficheur
 
 
         $html .="</div>";
+        $html.= "<button id='recherche'type='button'>rechercher</button>";
 
         return $html;
     }

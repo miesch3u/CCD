@@ -2,7 +2,8 @@
 
 
 namespace mywishlist;
-use mywishlist\afficheurs\PageAcceuil;
+use mywishlist\afficheurs\PageAccueil;
+use mywishlist\afficheurs\PageShopping;
 
 class Dispatcher
 {
@@ -76,6 +77,8 @@ class Dispatcher
         <head>
             <meta charset="UTF-8">
             <title>Court-Circuit Voltaire</title>
+            <script src="javascript/le_Js.js" defer></script>
+            <link rel="stylesheet" href="css/base.css" />
         </head>
         <header>
         <li>

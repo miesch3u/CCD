@@ -2,7 +2,6 @@
 
 
 namespace mywishlist\afficheurs;
-use mywishlist\afficheurs\Afficheur;
 
 class PageAccueil extends Afficheur
 {

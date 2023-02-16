@@ -4,6 +4,7 @@
 namespace mywishlist;
 
 use mywishlist\afficheurs\PageAccueil;
+use mywishlist\afficheurs\PageAdmin;
 use mywishlist\afficheurs\PageArticle;
 use mywishlist\afficheurs\PageCarte;
 use mywishlist\afficheurs\PageCommande;
@@ -45,6 +46,9 @@ class Dispatcher
             case "shopping":
                 $act = new PageShopping();
                 break;
+                case "admin":
+                    $act = new PageAdmin();
+                    break;
             //Article
             case "article":
                 $act = new PageArticle();

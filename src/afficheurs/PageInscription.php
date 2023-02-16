@@ -75,7 +75,7 @@ class PageInscription extends Afficheur
                 <input class="buttonslot" type="submit" value="Inscription"><br>
             </form>
             <div id="redirection">
-                <p class="aligner">Déjà inscrit ? <a class="nommer2" href="/Index.php?action=connexion">Connectez-vous !</a></p>
+                <p class="aligner">Déjà inscrit ? <a class="nommer2" href="?action=connexion">Connectez-vous !</a></p>
             </div>
             END;
 

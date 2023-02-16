@@ -27,7 +27,7 @@ class PageArticle extends Afficheur
         $desc = $row['description'];
         $det = $row['detail'];
         $discircuit = $row['distance'];
-        $html.= "<h1 class=\"prod\">$name</h1><div class=\"mineur\"><p><br>Prix : $prix €<br>Provenance : $lieu<br>Description : <br><br>$desc<br>".
+        $html.= "<style>.mineur {margin-left: 20px;}</style><h1 class=\"prod\">$name</h1><div class=\"mineur\"><p><br>Prix : $prix €<br>Provenance : $lieu<br>Description : <br><br>$desc<br>".
             "<br>Détails : $det<br>Distance du lieu de production : $discircuit km<br>".
             "<a href=\"index.php?action=panier&add=$id\"><button class=\"panier\" type='button'>Ajouter au panier</button></a></p>".
             "</div><div class=\"majeur\">

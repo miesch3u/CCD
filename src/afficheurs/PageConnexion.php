@@ -19,9 +19,9 @@ class PageConnexion extends Afficheur
                 $user = Authentification::authenticate($login, $_POST['pwd']);
                 if (isset($_SESSION['user'])) {
                         Authentification::checkAccessLevel(USER::NORMAL_USER);
-                        $res = " Bienvenu ! $login";
+                        $res = "<h1 class=\"connexion2\"> Bienvenu ! $login</h1>";
                 }else {
-                    $res = "L'authentification a échoué";
+                    $res = "<p class=\"connexion2\">L'authentification a échoué</p>";
                 }
 
                 //on gere aussi le cas ou le mot de passe a ete oublie

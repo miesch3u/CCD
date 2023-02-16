@@ -7,7 +7,7 @@ class PageDeco extends Afficheur
     public function execute(): string
     {
         session_destroy();
-        return "Vous êtes déconnecté";
+        return "<p class=\"connexion2\">Vous êtes déconnecté</p>";
     }
 
 }

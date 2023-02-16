@@ -20,19 +20,19 @@ class PageInscription extends Afficheur
                 $prenom = $_POST['Prenom'];
                 $password = $_POST['pwdd'];
                 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                    return  "L'email n'est pas valide";
+                    return  "<p class=\"connexion2\"> L'email n'est pas valide</p>";
                 }
                 //On verifie que le mot de passe fait au moins 10 caractères. Si ce n'est pas le cas, on lance une exception
                 if (strlen($password) < 10) {
-                   return "Le mot de passe doit faire au moins 10 caractères";
+                   return "<p class=\"connexion2\"> Le mot de passe doit faire au moins 10 caractères</p>";
                 }
                 //On verifie que l'email est libre. Si ce n'est pas le cas, on lance une exception
             if (!Authentification::emailLibre($email)) {
-                 return "Email déjà utilisé.";
+                 return "<p class=\"connexion2\"> Email déjà utilisé.</p>";
                 }
                 //On verifie que le login est libre. Si ce n'est pas le cas, on lance une exception
                 if (!Authentification::loginLibre($login)) {
-                  return "Login déjà utilisé.";
+                  return "<p class=\"connexion2\"> Login déjà utilisé.</p>";
                 }
 
                 if ($password === $pss) {
@@ -44,20 +44,20 @@ class PageInscription extends Afficheur
                                 Time() + 60 * 60 * 24 * 365);
 
 
-                            $res = "Bienvenu $login  votre compte a bien été créé ";
+                            $res = "<p class=\"connexion2\"> Bienvenu $login  votre compte a bien été créé </p>";
 
                         } else {
-                            $res = "Pensez a mettre un mail valide et un mot de passe de plus de 10 caractères";
+                            $res = "<p class=\"connexion2\"> Pensez a mettre un mail valide et un mot de passe de plus de 10 caractères</p>";
                         }
                     } else {
-                        $res = "L'email ou le login est déjà utilisé";
+                        $res = "<p class=\"connexion2\"> L'email ou le login est déjà utilisé</p>";
 
                     }
                 } else {
-                    $res = "Les mots de passe sont differents";
+                    $res = "<p class=\"connexion2\"> Les mots de passe sont differents</p>";
                 }
             } else {
-                return "Veuillez remplir tous les champs";
+                return "<p class=\"connexion2\"> Veuillez remplir tous les champs</p>";
             }
 
         } else {

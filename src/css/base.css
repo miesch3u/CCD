@@ -145,7 +145,6 @@ a:hover{
     height:40vw;
     width:40vw;
 }
-
 .mineur{
     align-text:center;
     position: absolute;
@@ -201,6 +200,17 @@ a:hover{
     margin:1vw;
     color: #ffffff;
     border-radius:1vw;
+}
+
+.panier4{
+    background-color:#FDC539;
+    font-size:2vw;
+    margin:1vw;
+    height:3vw;
+    color: #ffffff;
+    border-radius:1vw;
+    text-align:center;
+    align-self:center;
 }
 
 .panier2{
@@ -321,6 +331,16 @@ a.nommer2:visited{
     font-size-adjust:0.5;
     text-align:center;
 }
+.connexion2{
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:2vw;
+    margin:5vw;
+    color: #ff6a00;
+    resize:none;
+    font-size-adjust:0.5;
+    text-align:center;
+}
 
 .slot{
     text-align:center;
@@ -339,8 +359,43 @@ a.nommer2:visited{
     border-radius:1vw;
 }
 
+.buttonslot2{
+    background-color:#ff6a00;
+    font-size:1.5vw;
+    margin:1vw;
+    color: #ffffff;
+    height:3vw;
+    border-radius:1vw;
+    align-self:center;
+    text-align:center;
+}
+
 .aligner{
     text-align:center;
     font-family:Lucida Handwriting;
     font-size:1.5vw;
+}
+
+.aligner2{
+    text-align:center;
+    font-family:Lucida Handwriting;
+    font-size:1.5vw;
+    margin:4vw;
+}
+
+.grandtitre{
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:1.5vw;
+    color: #ff6a00;
+    resize:none;
+    font-size-adjust:0.5;
+}
+
+.petittext{
+    font-family:Lucida Handwriting;
+    font-size:1vw;
+    color: #074C4C;
+    resize:none;
+    font-size-adjust:0.5;
 }

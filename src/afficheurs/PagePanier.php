@@ -49,7 +49,7 @@ class PagePanier extends Afficheur
             $html.= "<div class=\"undertitre\"><h3> Prix total de la commande : $prixCommande €</h3>  <a href=\"index.php?action=shopping\"><button type='button'>Continuer vos achats</button></a><a href=\"index.php?action=commande\"><button type='button'>Valider et payer</button></a> </div>";
         }
         else{
-            $html .= "<p><h3>Votre panier est vide.</h3><br><a href=\"index.php?action=shopping\"><button type='button'>Parcourir le catalogue</button></a></p>";
+            $html .= "<div class=\"aligner\"><p><h3 class=\"connexion\">Votre panier est vide.</h3><br><a href=\"index.php?action=shopping\"><button class=\"buttonslot2\" type='button'>Parcourir le catalogue</button></a></div>";
         }
 
 

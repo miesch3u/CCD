@@ -110,7 +110,7 @@ class PageProfil extends Afficheur
 
             }
         } else {
-            $res = "<button><a href='?action=connexion'>Veuillez-vous connecter !</a></button>";
+            $res = "<div class=\"aligner2\"'><button class=\"panier4\"><a class=\"nommer\" href='?action=connexion'>Veuillez-vous connecter !</a></button><div>";
         }
         return $res;
     }

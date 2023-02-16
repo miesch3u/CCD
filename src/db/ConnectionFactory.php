@@ -1,6 +1,6 @@
 <?php
 
-namespace iutnc\netVOD\db;
+namespace db;
 
 use PDO;
 

@@ -1,6 +1,6 @@
 <?php
 
-use iutnc\netVOD\db\ConnectionFactory;
+use db\ConnectionFactory;
 
 ConnectionFactory::setConfig("DBConfig.ini");
 $action = (isset($_GET['action'])) ? $_GET['action'] : "";

@@ -9,6 +9,8 @@ class PageAcceuil extends Afficheur
 
     public function execute(): string
     {
-        return "";
+        return "<div class=\"rectangle\"></div>
+<img class= \"image\" src=\"src/img/logorond.png\" alt=\"Logo\">
+";
     }
 }

@@ -1,0 +1,10 @@
+.rectangle {
+    height: 50px;
+    width: 100px;
+    background-color: #555;
+}
+
+.image {
+    height: 10%;
+    width: 10%;
+}

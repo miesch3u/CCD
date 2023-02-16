@@ -125,6 +125,12 @@ a:hover{
     width: 100%;
 }
 
+.image_pdt2{
+    height:30vw;
+    width:30vw;
+    text-align:center;
+}
+
 .majeur{
     position: absolute;
     top:20vw;
@@ -187,4 +193,147 @@ a:hover{
     font-size:2vw;
     margin:1vw;
     color: #ffffff;
+    border-radius:1vw;
+}
+
+.panier2{
+    background-color:#FDC539;
+    font-size:2vw;
+    margin:1vw;
+    height:3vw;
+    color: #ffffff;
+    border-radius:1vw;
+}
+
+.genoux{
+    margin:0vw;
+    padding: 0vw;
+}
+
+.panier3{
+    background-color:#FDC539;
+    font-size:2vw;
+    margin:1vw;
+    color: #ffffff;
+    height:3vw;
+    border-radius:1vw;
+}
+
+div.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #074C4C;
+    align-content:center;
+}
+
+.cafe{
+    height:3vw;
+    margin:1vw;
+}
+
+.cafe2{
+    height:2.6vw;
+    margin:1vw;
+}
+
+.undertitre{
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:2vw;
+    margin:5vw;
+    color: #ff6a00;
+    resize:none;
+    font-size-adjust:0.5;
+    text-align: center;
+    align-content:center;
+
+}
+
+a.nommer:link{
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:2vw;
+    color: #ff6a00;
+    resize:none;
+    font-size-adjust:0.5;
+}
+
+a.nommer:hover{
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:2vw;
+    color: #ff6a00;
+    resize:none;
+    font-size-adjust:0.5;
+}
+
+a.nommer:visited{
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:2vw;
+    color: #ff6a00;
+    resize:none;
+    font-size-adjust:0.5;
+}
+
+a.nommer2:link{
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:1.5vw;
+    color: #ff6a00;
+    resize:none;
+    font-size-adjust:0.5;
+}
+
+a.nommer2:hover{
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:1.5vw;
+    color: #ff6a00;
+    resize:none;
+    font-size-adjust:0.5;
+}
+
+a.nommer2:visited{
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:1.5vw;
+    color: #ff6a00;
+    resize:none;
+    font-size-adjust:0.5;
+}
+
+.connexion{
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:3vw;
+    margin:1vw;
+    color: #ff6a00;
+    resize:none;
+    font-size-adjust:0.5;
+    text-align:center;
+}
+
+.slot{
+    text-align:center;
+}
+
+.underslot{
+    margin:0.5vw;
+}
+
+.buttonslot{
+    background-color:#ff6a00;
+    font-size:1.5vw;
+    margin:1vw;
+    color: #ffffff;
+    height:3vw;
+    border-radius:1vw;
+}
+
+.aligner{
+    text-align:center;
+    font-family:Lucida Handwriting;
+    font-size:1.5vw;
 }

@@ -66,7 +66,7 @@ class User
      */
     public function update(): void
     {
-        try {
+
 
         $db = ConnectionFactory::makeConnection();
 

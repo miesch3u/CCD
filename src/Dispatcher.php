@@ -5,7 +5,7 @@ namespace mywishlist;
 use mywishlist\Action\Action;
 use mywishlist\Action\AddUserAction;
 use mywishlist\afficheurs\Afficheur;
-use mywishlist\afficheurs\PageAcceuil;
+use mywishlist\afficheurs\PageAccueil;
 use mywishlist\afficheurs\PageArticle;
 use mywishlist\afficheurs\PageCarte;
 use mywishlist\afficheurs\PageCommande;

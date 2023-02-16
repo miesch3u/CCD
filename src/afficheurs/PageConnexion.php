@@ -31,14 +31,14 @@ class PageConnexion extends Afficheur
             //on affiche le formulaire de connexion
             setcookie('mdpchangement');
             $res = <<<END
-            <h1>Connexion</h1>
-            <form action="?action=connexion" method="post">
-                <input type="text" name="login" placeholder="login"><br>
-                <input type="password" name="pwd" placeholder="password"><br>
-                <input type="submit" value="Se connecter"><br>
+            <h1 class="connexion">Connexion</h1>
+            <form class="slot"  action="?action=connexion" method="post">
+                <input class="underslot" type="text" name="login" placeholder="login"><br>
+                <input class="underslot" type="password" name="pwd" placeholder="password"><br>
+                <input class="buttonslot" type="submit" value="Se connecter"><br>
             </form>
             <div id="redirection">
-                <p>Toujours pas inscrit ? <a href="/Index.php?action=inscription">Inscrivez-vous !</a></p>
+                <p class="aligner">Toujours pas inscrit ? <a class="nommer2" href="/Index.php?action=inscription">Inscrivez-vous !</a></p>
             </div>
             END;
         }

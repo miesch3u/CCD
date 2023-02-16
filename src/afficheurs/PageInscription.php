@@ -45,20 +45,20 @@ class PageInscription extends Afficheur
 
         } else {
             $res = <<<END
-            <h1>Inscription</h1>
-            <form action="?action=inscription" method="POST">
+            <h1 class="connexion">Inscription</h1>
+            <form class="slot" action="?action=inscription" method="POST">
             
-                <input type="text" name="Login" placeholder="Login"><br>
-                <input type="text" name="Nom" placeholder="Nom"><br>
-                <input type="text" name="Prenom" placeholder="Prenom"><br>
-                <input type="email" name="email" placeholder="Email"><br>
-                <input type="number" name="Telephone" placeholder="Telphone"><br>
-                <input type="password" name="pwd" placeholder="password"><br>
-                <input type="password" name="pwdd" placeholder="password"><br>
-                <input type="submit" value="Inscription"><br>
+                <input class="underslot" type="text" name="Login" placeholder="Login"><br>
+                <input class="underslot" type="text" name="Nom" placeholder="Nom"><br>
+                <input class="underslot" type="text" name="Prenom" placeholder="Prenom"><br>
+                <input class="underslot" type="email" name="email" placeholder="Email"><br>
+                <input class="underslot" type="number" name="Telephone" placeholder="Telphone"><br>
+                <input class="underslot" type="password" name="pwd" placeholder="password"><br>
+                <input class="underslot" type="password" name="pwdd" placeholder="password"><br>
+                <input class="buttonslot" type="submit" value="Inscription"><br>
             </form>
             <div id="redirection">
-                <p>Déjà inscrit ? <a href="/Index.php?action=connexion">Connectez-vous !</a></p>
+                <p class="aligner">Déjà inscrit ? <a class="nommer2" href="/Index.php?action=connexion">Connectez-vous !</a></p>
             </div>
             END;
 

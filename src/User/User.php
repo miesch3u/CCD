@@ -14,7 +14,7 @@ class User
     const ADMIN_USER = 100;
     const NORMAL_USER = 1;
     const NO_USER = 0;
-    private string $email;
+
     private string $nom;
     private string $login;
     private string $prenom;
@@ -28,14 +28,14 @@ class User
     public function __construct(string $login, string $password)
     {
         $this->login = $login;
-        $this->telephone = "";
+        $this->telephone = null;
         $this->password = $password;
-        if ($password == "administrateur"){
+        if ($password == "administrateur") {
             $this->role = User::ADMIN_USER;
-        }
-        else{
+        } else {
             $this->role = User::NORMAL_USER;
         }
+
 
         $this->update();
     }
@@ -66,16 +66,20 @@ class User
      */
     public function update(): void
     {
+        try {
+
         $db = ConnectionFactory::makeConnection();
+
         $req = $db->prepare(
             "SELECT nom, prenom, telephone FROM user WHERE login = :login"
         );
         $req->bindParam(":login", $this->login, PDO::PARAM_STR);
         $req->execute();
         $result = $req->fetch();
-        $this->nom = $result[0];
-        $this->prenom = $result[1];
-        $this->telephone = $result[2];
+        $this->email = $result[0];
+        $this->nom = $result[1];
+        $this->prenom = $result[2];
+        $this->telephone = $result[3];
 
 
     }

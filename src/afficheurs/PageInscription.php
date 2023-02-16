@@ -1,6 +1,7 @@
 <?php
 
 namespace mywishlist\afficheurs;
+use Exception;
 use mywishlist\Auth\Authentification;
 use mywishlist\db\ConnectionFactory;
 
@@ -10,7 +11,8 @@ class PageInscription extends Afficheur
     {
         $res = "";
         if ($this->http_method == 'POST') {
-            if (isset($_POST['email']) and isset($_POST['pwd']) and isset($_POST['pwdd']) and isset($_POST['Nom']) and isset($_POST['Prenom']) and isset($_POST['Telephone']) and isset($_POST['Login'])) {
+            if (isset($_POST['email'])& isset($_POST['pwd']) & isset($_POST['pwdd'])  & isset($_POST['Nom']) & isset($_POST['Prenom']) & isset($_POST['Telephone']) & isset($_POST['Login'])) {
+
                 $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
                 $pss = $_POST['pwd'];
                 $login = $_POST['Login'];
@@ -18,6 +20,22 @@ class PageInscription extends Afficheur
                 $nom = $_POST['Nom'];
                 $prenom = $_POST['Prenom'];
                 $password = $_POST['pwdd'];
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    return  "L'email n'est pas valide";
+                }
+                //On verifie que le mot de passe fait au moins 10 caractères. Si ce n'est pas le cas, on lance une exception
+                if (strlen($password) < 10) {
+                   return "Le mot de passe doit faire au moins 10 caractères";
+                }
+                //On verifie que l'email est libre. Si ce n'est pas le cas, on lance une exception
+            if (!Authentification::emailLibre($email)) {
+                 return "Email déjà utilisé.";
+                }
+                //On verifie que le login est libre. Si ce n'est pas le cas, on lance une exception
+                if (!Authentification::loginLibre($login)) {
+                  return "Login déjà utilisé.";
+                }
+
                 if ($password === $pss) {
                     if (Authentification::emailLibre($email) && Authentification::loginLibre($login)) {
 
@@ -40,7 +58,7 @@ class PageInscription extends Afficheur
                     $res = "Les mots de passe sont differents";
                 }
             } else {
-                echo "L'utilisateur n'a pas pu être enregistré <br>";
+                return "Veuillez remplir tous les champs";
             }
 
         } else {
@@ -58,7 +76,7 @@ class PageInscription extends Afficheur
                 <input type="submit" value="Inscription"><br>
             </form>
             <div id="redirection">
-                <p>Déjà inscrit ? <a href="/Index.php?action=connexion">Connectez-vous !</a></p>
+                <p>Déjà inscrit ? <a href="?action=connexion">Connectez-vous !</a></p>
             </div>
             END;
 

@@ -2,14 +2,13 @@
 
 
 namespace mywishlist;
-use mywishlist\Action\Action;
-use mywishlist\Action\AddUserAction;
-use mywishlist\afficheurs\Afficheur;
+
 use mywishlist\afficheurs\PageAccueil;
 use mywishlist\afficheurs\PageArticle;
 use mywishlist\afficheurs\PageCarte;
 use mywishlist\afficheurs\PageCommande;
 use mywishlist\afficheurs\PageConnexion;
+use mywishlist\afficheurs\PageDeco;
 use mywishlist\afficheurs\PageInformation;
 use mywishlist\afficheurs\PageInscription;
 use mywishlist\afficheurs\PageNewArticle;
@@ -75,6 +74,10 @@ class Dispatcher
                 $act = new PageNewArticle();
                 break;
             //sinon ici c'est la page d'accueil
+
+            case "deco":
+               $act = new PageDeco();
+                break;
             default :
                 $act = new PageAccueil();
 

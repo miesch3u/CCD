@@ -38,7 +38,7 @@ class PageConnexion extends Afficheur
                 <input type="submit" value="Se connecter"><br>
             </form>
             <div id="redirection">
-                <p>Toujours pas inscrit ? <a href="/Index.php?action=inscription">Inscrivez-vous !</a></p>
+                <p>Toujours pas inscrit ? <a href="?action=inscription">Inscrivez-vous !</a></p>
             </div>
             END;
         }

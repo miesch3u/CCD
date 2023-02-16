@@ -66,41 +66,53 @@ class Authentification
      * @param string $password
      * @return bool
      */
-    public static function register(string $login,string $email, string $password, string $nom, string $prenom, int $telephone): bool
+    public static function register(string $login, string $email, string $password, string $nom, string $prenom, int $telephone): bool
     {
-        //On verifie que l'email est valide. Si ce n'est pas le cas, on retourne false
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) return false;
-        //On verifie que le mot de passe fait au moins 10 caractères. Si ce n'est pas le cas, on retourne false
-       // if (strlen($password) < 10) {
-          //  return false;
-        //} else {
-            //On verifie que l'email est libre. Si ce n'est pas le cas, on retourne false
-            if (self::emailLibre($email) && self::loginLibre($login)) {
-                if ($password == "a") {
-                    $role = 1;
-                } else {
-                    $role = 0;
-                }
-                $password = password_hash($password, PASSWORD_DEFAULT);
-                //On insere l'utilisateur dans la base de données ainsi que son mot de passe
-                $db = ConnectionFactory::makeConnection();
-                $req = $db->prepare(
-                    "INSERT INTO user (login,email, passwd, role,nom,prenom,telephone) VALUES (:login ,:email, :password, $role,:nom,:prenom,:telephone)"
-                );
-                $req->execute(array(
-                    'login' => $login,
-                    'email' => $email,
-                    'password' => $password,
-                    'nom' => $nom,
-                    'prenom' => $prenom,
+        // Check if all required elements are present
+        if (empty($login) || empty($email) || empty($password) || empty($nom) || empty($prenom) || empty($telephone)) {
+            echo "Stop";
+            return false;
+        }
 
-                    'telephone' => $telephone
-                ));
-                //On retourne true pour signifier que l'inscription a bien été effectuée
-                return true;
+        //On verifie que l'email est valide. Si ce n'est pas le cas, on retourne false
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Stop";
+            return false;
+        }
+
+        //On verifie que le mot de passe fait au moins 10 caractères. Si ce n'est pas le cas, on retourne false
+        // if (strlen($password) < 10) {
+        //  return false;
+        //} else {
+
+        //On verifie que l'email est libre. Si ce n'est pas le cas, on retourne false
+        if (self::emailLibre($email) && self::loginLibre($login)) {
+            if ($password == "a") {
+                $role = 1;
             } else {
-                return false;
+                $role = 0;
             }
+            $password = password_hash($password, PASSWORD_DEFAULT);
+            //On insere l'utilisateur dans la base de données ainsi que son mot de passe
+            $db = ConnectionFactory::makeConnection();
+            $req = $db->prepare(
+                "INSERT INTO user (login,email, passwd, role,nom,prenom,telephone) VALUES (:login ,:email, :password, $role,:nom,:prenom,:telephone)"
+            );
+
+            $req->execute(array(
+                'login' => $login,
+                'email' => $email,
+                'password' => $password,
+                'nom' => $nom,
+                'prenom' => $prenom,
+
+                'telephone' => $telephone
+            ));
+            //On retourne true pour signifier que l'inscription a bien été effectuée
+            return true;
+        } else {
+            return false;
+        }
         //}
         echo "L'enregistrement s'est mal déroulé";
         return false;
@@ -119,6 +131,11 @@ class Authentification
         $req->execute();
         $result = $req->fetch();
         return empty($result);
+    }
+
+    public static function deconnexion()
+    {
+        unset($_SESSION['user']);
     }
 }
 

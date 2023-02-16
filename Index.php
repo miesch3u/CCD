@@ -2,7 +2,7 @@
 
 use mywishlist\db\ConnectionFactory;
 use mywishlist\Dispatcher;
-
+session_start();
 require_once "vendor/autoload.php";
 
 ConnectionFactory::setConfig("DBConfig.ini");

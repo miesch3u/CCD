@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace auth;
+namespace mywishlist\Auth;
 use netvod\user\User;
 use db\ConnectionFactory;
 use netvod\exception\AccessControlException;

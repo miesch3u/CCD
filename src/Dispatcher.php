@@ -2,7 +2,22 @@
 
 
 namespace mywishlist;
+use mywishlist\Action\Action;
+use mywishlist\Action\AddUserAction;
+use mywishlist\afficheurs\Afficheur;
 use mywishlist\afficheurs\PageAcceuil;
+use mywishlist\afficheurs\PageArticle;
+use mywishlist\afficheurs\PageCarte;
+use mywishlist\afficheurs\PageCommande;
+use mywishlist\afficheurs\PageConnexion;
+use mywishlist\afficheurs\PageInformation;
+use mywishlist\afficheurs\PageInscription;
+use mywishlist\afficheurs\PagePanier;
+use mywishlist\afficheurs\PageProfil;
+use mywishlist\afficheurs\PageShopping;
+use mywishlist\Auth\Authentification;
+use mywishlist\db\ConnectionFactory;
+use mywishlist\Exceptions\AccessControlException;
 
 class Dispatcher
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace netvod\auth;
+namespace mywishlist\Exceptions;
 
 class AccessControlException extends \Exception
 {

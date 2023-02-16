@@ -1,6 +1,7 @@
 <?php
 
-namespace Natha\Ccd\afficheurs;
+namespace mywishlist\afficheurs;
+use mywishlist\afficheurs\Afficheur;
 
 class PageConnexion extends Afficheur
 {

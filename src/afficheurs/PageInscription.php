@@ -1,7 +1,6 @@
 <?php
 
 namespace mywishlist\afficheurs;
-use mywishlist\afficheurs\Afficheur;
 
 class PageInscription extends Afficheur
 {

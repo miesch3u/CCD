@@ -77,8 +77,8 @@ class Dispatcher
         <head>
             <meta charset="UTF-8">
             <title>Court-Circuit Voltaire</title>
-            <script src="javascript/le_Js.js" defer></script>
-            <link rel="stylesheet" href="css/base.css" />
+            <script src="src/javascript/le_Js.js" defer></script>
+            <link rel="stylesheet" href="src/css/base.css" />
         </head>
         <header>
         <li>

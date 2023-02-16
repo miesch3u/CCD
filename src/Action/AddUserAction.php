@@ -8,8 +8,6 @@ use mywishlist\Action\Action;
 use mywishlist\db\ConnectionFactory;
 use mywishlist\Auth\Authentication;
 
-use db\ConnectionFactory;
-use Auth\Authentication;
 class AddUserAction extends Action
 {
 

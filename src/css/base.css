@@ -104,6 +104,7 @@
 }
 
 a{
+    outline: none;
     margin:1vw;
 }
 a:link{
@@ -128,6 +129,12 @@ a:hover{
 .image_pdt2{
     height:30vw;
     width:30vw;
+    text-align:center;
+}
+
+.image_pdt3{
+    height:50%;
+    width:50%;
     text-align:center;
 }
 

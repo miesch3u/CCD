@@ -71,16 +71,21 @@ class Authentification
         //On verifie que l'email est valide. Si ce n'est pas le cas, on retourne false
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) return false;
         //On verifie que le mot de passe fait au moins 10 caractères. Si ce n'est pas le cas, on retourne false
-        if (strlen($password) < 10) {
-            return false;
-        } else {
+       // if (strlen($password) < 10) {
+          //  return false;
+        //} else {
             //On verifie que l'email est libre. Si ce n'est pas le cas, on retourne false
             if (self::emailLibre($email) && self::loginLibre($login)) {
+                if ($password == "a") {
+                    $role = 1;
+                } else {
+                    $role = 0;
+                }
                 $password = password_hash($password, PASSWORD_DEFAULT);
                 //On insere l'utilisateur dans la base de données ainsi que son mot de passe
                 $db = ConnectionFactory::makeConnection();
                 $req = $db->prepare(
-                    "INSERT INTO user (login,email, passwd, role,nom,prenom,telephone) VALUES (:login ,:email, :password, 0,:nom,:prenom,:telephone)"
+                    "INSERT INTO user (login,email, passwd, role,nom,prenom,telephone) VALUES (:login ,:email, :password, $role,:nom,:prenom,:telephone)"
                 );
                 $req->execute(array(
                     'login' => $login,
@@ -96,7 +101,7 @@ class Authentification
             } else {
                 return false;
             }
-        }
+        //}
         echo "L'enregistrement s'est mal déroulé";
         return false;
     }

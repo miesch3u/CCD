@@ -20,6 +20,7 @@ class PageInscription extends Afficheur
                 $password = $_POST['pwdd'];
                 if ($password === $pss) {
                     if (Authentification::emailLibre($email) && Authentification::loginLibre($login)) {
+
                         if (Authentification::register($login,$email ,$pss, $nom, $prenom, $tele)) {
                             $track_user_code = uniqid();
                             setcookie("token", $track_user_code,

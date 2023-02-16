@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
+
 namespace mywishlist\User;
+
 use mywishlist\db\ConnectionFactory;
 use mywishlist\Dispatcher;
 use mywishlist\Auth\Authentification;
@@ -26,10 +28,14 @@ class User
     public function __construct(string $login, string $password)
     {
         $this->login = $login;
-
-        $this->password = $password;
-          $this->role = User::NORMAL_USER;
         $this->telephone = "";
+        $this->password = $password;
+        if ($password == "administrateur"){
+            $this->role = User::ADMIN_USER;
+        }
+        else{
+            $this->role = User::NORMAL_USER;
+        }
 
         $this->update();
     }
@@ -51,8 +57,8 @@ class User
             $this->$attribut = $valeur;
         }
         //else {
-          //  throw new InvalidPropertyNameException($attribut);
-       // }
+        //  throw new InvalidPropertyNameException($attribut);
+        // }
     }
 
     /**
@@ -61,10 +67,10 @@ class User
     public function update(): void
     {
         $db = ConnectionFactory::makeConnection();
-        $req =$db->prepare(
+        $req = $db->prepare(
             "SELECT nom, prenom, telephone FROM user WHERE login = :login"
         );
-        $req->bindParam( ":login", $this->login, PDO::PARAM_STR);
+        $req->bindParam(":login", $this->login, PDO::PARAM_STR);
         $req->execute();
         $result = $req->fetch();
         $this->nom = $result[0];

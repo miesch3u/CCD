@@ -46,7 +46,7 @@ class PageCommande extends Afficheur
         else {
             $html .= "<div class=\"undertitre\"><h3>Vous n'êtes pas actuellement connecté.</h3> <br>".
             "<p>Veuillez vous connecter, puis retourner sur le panier.</p>".
-            "<a href=\"index.php?action=connexion\"><button type='button'>Se connecter</button></a></div>";
+            "<a href=\"index.php?action=connexion\"><button class=\"buttonslot2\" type='button'>Se connecter</button></a></div>";
         }
 
         return $html;

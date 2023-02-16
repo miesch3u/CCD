@@ -17,7 +17,7 @@ class PageEditArticle extends Afficheur
         $querry = "delete from produit where id = ?";
         $req = $db->prepare($querry);
         $req->execute([$id]);
-        $html .= "<div class='titretexte'>article supprimé</div>";
+        $html .= "<div class='connexion2'>article supprimé</div>";
         return $html;
     }
 }

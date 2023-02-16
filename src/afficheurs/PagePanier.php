@@ -16,7 +16,11 @@ class PagePanier extends Afficheur
 
         if(isset($_GET['add'])){
             $add = $_GET['add'];
-            if(array_key_exists($add,$panier)){
+            if($add=="reset"){
+                echo "nice";
+                $panier = array();
+            }
+            else if(array_key_exists($add,$panier)){
                 $panier[$add]++;
             } else $panier[$add]=1;
             setcookie("panier",serialize($panier));
@@ -46,7 +50,7 @@ class PagePanier extends Afficheur
                 $prixCommande += $prixTot;
                 $html .= "<div class=\"undertitre\"><strong>$name</strong><br>Prix unitaire : $prix €<br>Provenance : $lieu<br>Quantité : $qte <br><br>Prix total : $prixTot €<br><a href='index.php?action=article&id=$id'><img class='image_pdt2' src=\"src/img/$id.jpg\" alt=\"Image\"></a></div>";
             }
-            $html.= "<div class=\"undertitre\"><h3> Prix total de la commande : $prixCommande €</h3>  <a href=\"index.php?action=shopping\"><button type='button'>Continuer vos achats</button></a><a href=\"index.php?action=commande\"><button type='button'>Valider et payer</button></a> </div>";
+            $html.= "<div class=\"undertitre\"><h3> Prix total de la commande : $prixCommande €</h3>  <a href=\"index.php?action=shopping\"><button type='button'>Continuer vos achats</button></a><a href=\"index.php?action=commande\"><button type='button'>Valider et payer</button></a> <a href=\"index.php?action=panier&add=reset\"><button type='button'>Vider le panier</button></a> </div>";
         }
         else{
             $html .= "<div class=\"aligner\"><p><h3 class=\"connexion\">Votre panier est vide.</h3><br><a href=\"index.php?action=shopping\"><button class=\"buttonslot2\" type='button'>Parcourir le catalogue</button></a></div>";

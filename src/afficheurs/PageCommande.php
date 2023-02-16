@@ -13,22 +13,26 @@ class PageCommande extends Afficheur
             $db = ConnectionFactory::makeConnection();
             if(isset($_COOKIE['panier'])){
                 $panier = unserialize($_COOKIE['panier']);
-                $req = $db->prepare("select idcommande from commander order by idcommande DESC");
+                $req = $db->prepare("select idcommande from commandes order by idcommande DESC");
                 $req->execute();
                 $fe = $req->fetch();
-                $idcommande = $fe['idcommande'];
+                if($fe!=false){
+                    $idcommande = $fe['idcommande'];
+                } else {
+                    $idcommande = 1;
+                }
                 foreach ($panier as $idproduit => $qte) {
-                    $req = $db->prepare("insert into commander values (?,?,?,?,?)");
+                    $req = $db->prepare("insert into commandes values (?,?,?,?,?)");
                     $usr = unserialize($_SESSION['user']);
                     $logi = $usr->login;
-                    $req = $db->prepare(
+                    $reque = $db->prepare(
                         "SELECT email FROM user WHERE login = ?"
                     );
-                    $req->execute([$logi]);
-                    $email = $req->fetch();
+                    $reque->execute([$logi]);
+                    $email = $reque->fetch();
                     $req->bindParam(1,$idcommande);
                     $req->bindParam(2,$logi);
-                    $req->bindParam(3,$email);
+                    $req->bindParam(3,$email['email']);
                     $req->bindParam(4,$idproduit);
                     $req->bindParam(5,$qte);
                     $req->execute();

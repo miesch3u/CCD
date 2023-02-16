@@ -57,10 +57,10 @@ class Dispatcher
                 break;
             //sinon ici c'est la page d'accueil
             default :
-                $act = new PageAcceuil();
+                $act = new PageAccueil();
 
         }
-        $res = $act->execute();
+        $res .= $act->execute();
         $this->renderPage($res);
     }
 

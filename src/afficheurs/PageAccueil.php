@@ -4,7 +4,7 @@
 namespace mywishlist\afficheurs;
 use mywishlist\afficheurs\Afficheur;
 
-class PageAcceuil extends Afficheur
+class PageAccueil extends Afficheur
 {
 
     public function execute(): string

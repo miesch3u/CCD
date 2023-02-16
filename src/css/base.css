@@ -1,10 +1,25 @@
 .rectangle {
-    height: 50px;
-    width: 100px;
-    background-color: #555;
+    height: 5vw;
+    width: 25vw;
+    background-color: #074C4C;
 }
 
 .image {
-    height: 10%;
-    width: 10%;
+    height: 10vw;
+    width: 10vw;
+}
+
+.font {
+    height: 2vw;
+    background-color: #074C4C;
+    color: #FDC539;
+    border-top: solid #074C4C;
+}
+
+.corp {
+margin:0;
+}
+
+element-tete {
+    margin:3vw;
 }

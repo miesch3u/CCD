@@ -80,8 +80,8 @@ class Dispatcher
             <script src="src/javascript/le_Js.js" defer></script>
             <link rel="stylesheet" href="src/css/base.css" />
         </head>
-        <header>
-        <li>
+        <header class="font">
+        <li class="element-tete">
         <a>Court-Circuit Voltaire</a>
         <a href="index.php">Accueil</a>
         <a href="index.php?action=connexion">Connexion</a>
@@ -93,10 +93,9 @@ class Dispatcher
         <a href="index.php?action=inscription">Inscription</a>
         <a href="index.php?action=carte">Carte</a>
         <a href="index.php?action=information">Information</a>
-         
          </li>
         </header>
-        <body class="">
+        <body class="corp">
         END;
 
         $res .= $html;

@@ -39,29 +39,35 @@
 }
 
 .soustexte {
-    font-size:1.5em;
+    height:5vw;
+    width:5vw;
+    font-size:2vw;
     top: 5vw;
     margin:5vw;
     color: #ffffff;
+    resize:none;
 }
 .soustexte1 {
     left:25vw;
-    font-size:1.5em;
+    font-size:2vw;
     top: 5vw;
     margin:5vw;
     color: #ffffff;
+    resize:none;
 }
 
 .titretexte {
-    font-size:3em;
+    font-size:4vw;
     margin:5vw;
     color: #FDC539;
+    resize:none;
 }
 .titretexte1 {
     left:25vw;
-    font-size:3em;
+    font-size:4vw;
     margin:5vw;
     color: #FDC539;
+    resize:none;
 }
 
 .image {

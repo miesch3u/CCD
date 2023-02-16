@@ -75,7 +75,6 @@ class PageProfil extends Afficheur
                 $_SESSION['user'] = serialize($user);
 
             } else {
-                var_dump($user);
                 $db = ConnectionFactory::makeConnection();
                 $req = $db->prepare(
                     "SELECT email FROM user WHERE login = ?"

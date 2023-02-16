@@ -44,9 +44,9 @@ class PagePanier extends Afficheur
                 $qte = $panier[$id];
                 $prixTot = $prix*$qte;
                 $prixCommande += $prixTot;
-                $html .= "<div><strong>$name</strong><br>Prix unitaire : $prix<br>Provenance : $lieu<br>Quantité : $qte <br><br>Prix total : $prixTot €<br><a href='index.php?action=article&id=$id'><img class='image_pdt' src=\"src/img/$id.jpg\" alt=\"Image\"></div></a>";
+                $html .= "<div class=\"undertitre\"><strong>$name</strong><br>Prix unitaire : $prix €<br>Provenance : $lieu<br>Quantité : $qte <br><br>Prix total : $prixTot €<br><a href='index.php?action=article&id=$id'><img class='image_pdt2' src=\"src/img/$id.jpg\" alt=\"Image\"></a></div>";
             }
-            $html.= "<h3> Prix total de la commande : $prixCommande </h3> <a href=\"index.php?action=shopping\"><button type='button'>Continuer vos achats</button></a>";
+            $html.= "<div class=\"undertitre\"><h3> Prix total de la commande : $prixCommande €</h3>  <a href=\"index.php?action=shopping\"><button type='button'>Continuer vos achats</button></a><a href=\"index.php?action=commande\"><button type='button'>Valider et payer</button></a> </div>";
         }
         else{
             $html .= "<p><h3>Votre panier est vide.</h3><br><a href=\"index.php?action=shopping\"><button type='button'>Parcourir le catalogue</button></a></p>";

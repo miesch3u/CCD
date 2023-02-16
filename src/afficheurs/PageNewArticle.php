@@ -2,29 +2,60 @@
 
 namespace mywishlist\afficheurs;
 
+use mywishlist\db\ConnectionFactory;
+
 class PageNewArticle extends Afficheur
 {
 
-    public function execute(): string{
+    public function execute(): string
+    {
+        if (!isset($_SESSION['user']))  return "<div class='titretexte'>droits insuffisants</div>>";
+        else if ($_SESSION['user']->__get('role')==0) return "<div class='titretexte'>droits insufifsants</div>>";
         $html = "";
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
-            $html = "<form method='get'><button type='submit'>créer un autre article</button> </form>";
-        }
-        else {
+            $cat = $_POST['cat'];
+            $db = ConnectionFactory::makeConnection();
+            $req = $db->prepare("select * from produit where id >= all(select id from produit)");
+            $req->execute();
+            $row = $req->fetch();
+            $id = $row['id'];
+            $querry = "insert into produit values"
+                . "($id+1, $cat,'{$_POST['nomProd']}', {$_POST['prixProd']}"
+                . ", {$_POST['poidProd']}, '{$_POST['descProd']}', '{$_POST['detProd']}','{$_POST['lieuxProd']}'"
+                . ",{$_POST['distProd']}, {$_POST['latProd']}, {$_POST['longProd']})";
+            $q = $db->prepare($querry);
+            $q->execute();
+            $req = $db->prepare("SELECT id,nom,prix,lieu from produit where id = ?");
+            $req->execute([$id]);
+            $row = $req->fetch();
+            $id = $row['id'];
+            $name = $row['nom'];
+            $prix = $row['prix'];
+            $lieu = $row['lieu'];
+            /*$tmpName = $_FILES['file']['tmp_name'];
+            $array = explode('.', $_FILES['file']['name']);
+            $ext = end($array);
+            var_dump($_FILES);
+            move_uploaded_file($tmpName, '/src/img' . "$id+$ext");*/
+            $html .= "<div><strong>$name</strong><br>Prix : $prix<br>Provenance : $lieu<a href='index.php?action=article&id=$id'><img class='image_pdt' src=\"src/img/$id.jpg\" alt=\"Image\"></div></a>";
+
+
+            $html .= "<a href='?action=newArticle'><button type='submit'>créer un autre article</button> </form>";
+        } else {
             $html .= "<form method='post'><div style='display: flex; flex-direction: column'>";
-            $html .= "<select id='cat'><option value='0'>categorie</option><option value='1'>Confiseries</option><option value='2'>Boissons</option>"
-                . "<option value='3'>Hygiène</option><option value ='4'>Cosmetique</option><option value='5'>Fromages et pâtés</option></select>";
-            $html .= "<div>nom du produit :<input id='nomProd'></div> ";
-            $html .= "<div>prix du produit : <input type='number' id='prixProd'></div> ";
-            $html .= "<div>poids du produit (0 pour vrac) : <input type='number' id='poidProd'></div> ";
-            $html .= "<div>description du produit : <textarea id='descProd' placeholder='description'></textarea></div> ";
-            $html .= "<div>details du produit : <textarea id='detProd' placeholder='detail'></textarea></div> ";
-            $html .= "<div>lieux du produit :<input id='lieuxProd'></div> ";
-            $html .= "<div>distance du produit :<input type='number' id='distProd'></div> ";
-            $html .= "<div>latitude du produit :<input type='number' id='latProd'></div> ";
-            $html .= "<div>longitude du produit :<input type='number' id='longProd'></div> ";
-            $html .= "<div>image du produit :<input type='image' id='imgProd'></div> ";
-            $html .= "<button id='btnVal' type='submit'>valider</button></div></form>";
+            $html .= "<div>catégorie du produit : <select id='cat' name='cat'><option value='1'>Confiseries</option><option value='2'>Boissons</option>"
+                . "<option value='3'>Hygiène</option><option value ='4'>Cosmetique</option><option value='5'>Fromages et pâtés</option></select></div>";
+            $html .= "<div>nom du produit :<input id='nomProd' name='nomProd'></div> ";
+            $html .= "<div>prix du produit : <input id='prixProd' type='number' name='prixProd'></div> ";
+            $html .= "<div>poids du produit (0 pour vrac) : <input type='number' name='poidProd'></div> ";
+            $html .= "<div>description du produit : <textarea name='descProd' placeholder='description'></textarea></div> ";
+            $html .= "<div>details du produit : <textarea name='detProd' placeholder='detail'></textarea></div> ";
+            $html .= "<div>lieux du produit :<input name='lieuxProd'></div> ";
+            $html .= "<div>distance du produit :<input type='number' name='distProd'></div> ";
+            $html .= "<div>latitude du produit :<input type='number' name='latProd'></div> ";
+            $html .= "<div>longitude du produit :<input type='number' name='longProd'></div> ";
+            //$html .= "<div>image du produit :<input type='file' id='file' name='file'/></div> ";
+            $html .= "<div><button name='btnVal' type='submit'>valider</button></div></div></form>";
         }
 
         return $html;

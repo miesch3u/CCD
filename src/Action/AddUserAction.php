@@ -6,7 +6,7 @@ declare(strict_types=1);
 namespace action;
 
 use db\ConnectionFactory;
-use auth\Authentication;
+use Auth\Authentication;
 class AddUserAction extends Action
 {
 

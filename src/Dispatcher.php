@@ -12,6 +12,7 @@ use mywishlist\afficheurs\PageCommande;
 use mywishlist\afficheurs\PageConnexion;
 use mywishlist\afficheurs\PageInformation;
 use mywishlist\afficheurs\PageInscription;
+use mywishlist\afficheurs\PageNewArticle;
 use mywishlist\afficheurs\PagePanier;
 use mywishlist\afficheurs\PageProfil;
 use mywishlist\afficheurs\PageShopping;
@@ -69,6 +70,9 @@ class Dispatcher
                 break;
             case "information":
                 $act = new PageInformation();
+                break;
+            case "newArticle":
+                $act = new PageNewArticle();
                 break;
             //sinon ici c'est la page d'accueil
             default :

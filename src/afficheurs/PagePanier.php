@@ -1,5 +1,6 @@
 <?php
 
+namespace Natha\Ccd\afficheurs;
 
 class PagePanier extends Afficheur
 {

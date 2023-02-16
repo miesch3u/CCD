@@ -76,6 +76,9 @@ class Dispatcher
             <meta charset="UTF-8">
             <title>Court-Circuit Voltaire</title>
         </head>
+        <header>
+        
+        </header>
         <body class="">
         END;
 

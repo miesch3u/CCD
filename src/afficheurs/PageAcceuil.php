@@ -1,6 +1,7 @@
 <?php
 
-namespace afficheurs;
+namespace mywishlist\afficheurs;
+use mywishlist\afficheurs\Afficheur;
 
 class PageAcceuil extends Afficheur
 {

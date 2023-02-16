@@ -1,8 +1,11 @@
 {
-    "name": "natha/ccd",
+    "require": {
+        "illuminate/database": "^8.73.0",
+        "php": ">=7.2"
+    },
     "autoload": {
         "psr-4": {
-            "Natha\\Ccd\\": "src/"
+            "mywishlist\\": "./src"
         }
     },
     "authors": [
@@ -10,6 +13,5 @@
             "name": "miesch3u",
             "email": "nathanaelmiesch@gmail.com"
         }
-    ],
-    "require": {}
+    ]
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace iutnc\netVOD\afficheur;
+namespace mywishlist\afficheurs;
 
 abstract class Afficheur
 {

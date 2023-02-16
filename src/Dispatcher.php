@@ -1,5 +1,8 @@
 <?php
 
+namespace mywishlist;
+use mywishlist\afficheurs\PageAcceuil;
+
 class Dispatcher
 {
     private string $action;

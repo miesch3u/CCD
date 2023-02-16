@@ -1,6 +1,7 @@
 <?php
 
-use db\ConnectionFactory;
+use mywishlist\db\ConnectionFactory;
+use mywishlist\Dispatcher;
 
 require_once "vendor/autoload.php";
 

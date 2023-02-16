@@ -39,6 +39,7 @@
 }
 
 .soustexte {
+    font-family:Verdana;
     height:5vw;
     width:5vw;
     font-size:2vw;
@@ -46,28 +47,35 @@
     margin:5vw;
     color: #ffffff;
     resize:none;
+    font-size-adjust:0.5;
 }
 .soustexte1 {
+    font-family:Verdana;
     left:25vw;
     font-size:2vw;
     top: 5vw;
     margin:5vw;
     color: #ffffff;
     resize:none;
+    font-size-adjust:0.5;
 }
 
 .titretexte {
+    font-family:Lucida Handwriting;
     font-size:4vw;
     margin:5vw;
     color: #FDC539;
     resize:none;
+    font-size-adjust:0.5;
 }
 .titretexte1 {
+    font-family:Lucida Handwriting;
     left:25vw;
     font-size:4vw;
     margin:5vw;
     color: #FDC539;
     resize:none;
+    font-size-adjust:0.5;
 }
 
 .image {

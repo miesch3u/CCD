@@ -1,16 +1,18 @@
 <?php
 declare(strict_types=1);
 namespace mywishlist\Auth;
-use netvod\user\User;
-use db\ConnectionFactory;
-use netvod\exception\AccessControlException;
+use mywishlist\db\ConnectionFactory;
+use mywishlist\User\User;
+
+
+
 //Classe Auth
-class Auth{
+class Authentification{
 
     //Methode permettant de savoir si un email est disponible
     public static function emailLibre($email) : bool{
-        ConnectionFactory::makeConnection();
-        $req = ConnectionFactory::$db->prepare(
+        $db = ConnectionFactory::makeConnection();
+        $req = $db->prepare(
             "SELECT email FROM user WHERE email ='$email'"
         );
         $req->execute();
@@ -23,9 +25,9 @@ class Auth{
      */
     public static function checkAccessLevel (int $required): void {
         $userLevel = (int) unserialize($_SESSION['user'])->role;
-        if ($userLevel < $required){
-            throw new AccessControlException("Action non autorisée : droits insuffisants");
-        }
+      //  if ($userLevel < $required){
+        //    throw new AccessControlException("Action non autorisée : droits insuffisants");
+        //}
     }
 
     /**
@@ -38,8 +40,8 @@ class Auth{
     public static function authenticate(string $email, string $password) : ?User{
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) return null;
         $res=null;
-        ConnectionFactory::makeConnection();
-        $req = ConnectionFactory::$db->prepare(
+        $db = ConnectionFactory::makeConnection();
+        $req = $db->prepare(
             "SELECT passwd, role FROM user WHERE email ='$email'"
         );
 
@@ -70,9 +72,9 @@ class Auth{
             if (self::emailLibre($email)) {
                 $password = password_hash($password, PASSWORD_DEFAULT);
                 //On insere l'utilisateur dans la base de données ainsi que son mot de passe
-                ConnectionFactory::makeConnection();
-                $req = ConnectionFactory::$db->prepare(
-                    'INSERT INTO user VALUES (0, :email, :password, "", "",0)'
+                $db=ConnectionFactory::makeConnection();
+                $req = $db->prepare(
+                    "INSERT INTO user (email, passwd, role) VALUES (:email, :password, 0)"
                 );
                 $req->execute(array(
                     'email' => $email,

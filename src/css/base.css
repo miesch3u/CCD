@@ -1,27 +1,49 @@
+.pack {
+    position: relative;
+}
+
+.objet {
+    position: absolute;
+    top: 0;
+}
 .rectangle {
-    height: 50px;
-    width: 100px;
-    background-color: #555;
+    left: 0;
+    border-bottom: 25vw solid #555;
+    border-right: 2vw solid transparent;
+    height: 0;
+    width: 75vw;
+}
+
+.soustexte {
+    top: 5vw;
+    margin:5vw;
+}
+
+.titretexte {
+    margin:5vw;
 }
 
 .image {
-    height: 10vw;
-    width: 10vw;
+    left: 75vw;
+    height: 25vw;
+    width: 25vw;
 }
 
 .font {
-    height: 2vw;
+    height: 3vw;
     background-color: #074C4C;
     color: #FDC539;
     border-top: solid #074C4C;
+    font-size: 1.5vw;
 }
 
 .corp {
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,229,148,1) 100%);
     margin:0;
+    background:linear-gradient(0deg, rgba(255,206,56,1) 0%, rgba(255,255,255,1) 100%);
+    background-attachment: fixed;
 }
 
-a element-tete{
+a{
     margin:1.2vw;
 }
 

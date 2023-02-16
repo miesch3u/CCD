@@ -7,8 +7,13 @@ class PageAccueil extends Afficheur
 
     public function execute(): string
     {
-        return "<div class=\"rectangle\"></div>
-<img class= \"image\" src=\"src/img/logorond.png\" alt=\"Logo\">
+        return "
+<div class=\"pack\">
+<img class= \"objet image\" src=\"src/img/8.jpg\" alt=\"Logo\">
+<div class=\"objet rectangle\"></div>
+<h1 class =\"objet titretexte\"> Pour aider vos éleveur favoris</h1>
+<p class =\"objet soustexte\"> PTDR</p>
+</div>
 ";
     }
 }

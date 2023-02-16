@@ -10,6 +10,7 @@ use mywishlist\afficheurs\PageCarte;
 use mywishlist\afficheurs\PageCommande;
 use mywishlist\afficheurs\PageConnexion;
 use mywishlist\afficheurs\PageDeco;
+use mywishlist\afficheurs\PageEditArticle;
 use mywishlist\afficheurs\PageInformation;
 use mywishlist\afficheurs\PageInscription;
 use mywishlist\afficheurs\PageNewArticle;
@@ -77,8 +78,9 @@ class Dispatcher
             case "newArticle":
                 $act = new PageNewArticle();
                 break;
-            //sinon ici c'est la page d'accueil
-
+            case "editArticle":
+                $act = new PageEditArticle();
+                break;
             case "deco":
                $act = new PageDeco();
                 break;

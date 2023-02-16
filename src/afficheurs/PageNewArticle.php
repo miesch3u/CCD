@@ -10,7 +10,7 @@ class PageNewArticle extends Afficheur
     public function execute(): string
     {
         if (!isset($_SESSION['user']))  return "<div class='titretexte'>droits insuffisants</div>>";
-        else if ($_SESSION['user']->__get('role')==0) return "<div class='titretexte'>droits insufifsants</div>>";
+        else if (unserialize($_SESSION['user'])->__get('role')==0) return "<div class='titretexte'>droits insuffisants</div>>";
         $html = "";
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $cat = $_POST['cat'];

@@ -1,7 +1,7 @@
 {
     "require": {
         "illuminate/database": "^8.73.0",
-        "php": ">=7.2"
+        "php": ">=7.3"
     },
     "autoload": {
         "psr-4": {

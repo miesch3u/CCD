@@ -19,6 +19,11 @@ class PageShopping extends Afficheur
         $req->execute();
         while($row = $req->fetch()){
             //Création des articles
+            $id = $row['id'];
+            $name = $row['nom'];
+            $prix = $row['prix'];
+            $lieu =$row['lieu'];
+            $html.="<strong>$name</strong><br>Prix : $prix<br>Provenance : $lieu<img src=\"$id.jpg\" alt=\"Image\">";
 
         }
 

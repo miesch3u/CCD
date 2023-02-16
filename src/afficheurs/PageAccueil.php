@@ -19,7 +19,7 @@ class PageAccueil extends Afficheur
 <img class= \"objet image1\" src=\"src/img/3.jpg\" alt=\"Logo\">
 <div class=\"objet rectangle1\"></div>
 <h1 class =\"objet titretexte1\">Vos produit favoris </h1>
-<p class =\"objet soustexte1\"> Des produits phares comme les pots de pâte à tartiner de la marque L'or et Nuts</p>
+<p class =\"objet soustexte1\"> Des produits phares comme les pots de pâte à tartiner de la marque Lor et Nuts</p>
 </div>
 <div class=\"pack2\">
 <img class= \"objet image\" src=\"src/img/6.jpg\" alt=\"Logo\">

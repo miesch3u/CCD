@@ -121,6 +121,70 @@ a:hover{
 }
 
 .image_pdt{
-    height: 20%;
-    width: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.majeur{
+    position: absolute;
+    top:20vw;
+    left:57vw;
+    height:40vw;
+    width:40vw;
+}
+
+.mineur{
+    align-text:center;
+    position: absolute;
+    top:15vw;
+    font-family:Century Gothic;
+    font-size:1.5vw;
+    color: #074c4c;
+    font-weight: bold;
+    width:50vw;
+}
+#map {
+    height: 400px; /* The height is 400 pixels */
+    width: 100%; /* The width is the width of the web page */
+}
+
+.prod {
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:3vw;
+    color: #FDC539;
+    resize:none;
+    font-size-adjust:0.5;
+    text-align: center;
+}
+.carte{
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:3vw;
+    margin:5vw;
+    color: #FDC539;
+    resize:none;
+    font-size-adjust:0.5;
+}
+
+.cartegros{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.textcarte{
+    font-family:Century Gothic;
+    font-size:2vw;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.panier{
+    background-color:#ff6a00;
+    font-size:2vw;
+    margin:1vw;
+    color: #ffffff;
 }

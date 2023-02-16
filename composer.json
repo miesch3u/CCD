@@ -1,12 +1,15 @@
 {
-  "require":{
-    "illuminate/database": "8.*",
-    "php": ">=7.3"
-  },
-
-  "autoload":{
-    "psr-4": {
-      "Charlie\\" : "src/"
-    }
-  }
+    "name": "natha/ccd",
+    "autoload": {
+        "psr-4": {
+            "Natha\\Ccd\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "miesch3u",
+            "email": "nathanaelmiesch@gmail.com"
+        }
+    ],
+    "require": {}
 }

@@ -9,6 +9,10 @@ let boutonRecherche = () =>{
 }
 
 window.onload = ()=>{
-    document.querySelector('#rech').onclick = boutonRecherche
-    document.querySelector('#filter').onchange = boutonRecherche
+    try
+    {
+        document.querySelector('#rech').onclick = boutonRecherche
+        document.querySelector('#filter').onchange = boutonRecherche
+    }
+    catch (e){}
 }

@@ -399,3 +399,14 @@ a.nommer2:visited{
     resize:none;
     font-size-adjust:0.5;
 }
+
+.connexion3{
+    text-decoration: underline;
+    font-family:Lucida Handwriting;
+    font-size:1vw;
+    margin:1vw;
+    color: #ff6a00;
+    resize:none;
+    font-size-adjust:0.5;
+    text-align:center;
+}

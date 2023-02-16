@@ -43,19 +43,19 @@ class PageNewArticle extends Afficheur
             $html .= "<a href='?action=newArticle'><button type='submit'>créer un autre article</button> </form>";
         } else {
             $html .= "<form method='post'><div style='display: flex; flex-direction: column'>";
-            $html .= "<div>catégorie du produit : <select id='cat' name='cat'><option value='1'>Confiseries</option><option value='2'>Boissons</option>"
+            $html .= "<div class=\"connexion3\">catégorie du produit : <select id='cat' name='cat'><option value='1'>Confiseries</option><option value='2'>Boissons</option>"
                 . "<option value='3'>Hygiène</option><option value ='4'>Cosmetique</option><option value='5'>Fromages et pâtés</option></select></div>";
-            $html .= "<div>nom du produit :<input id='nomProd' name='nomProd'></div> ";
-            $html .= "<div>prix du produit : <input id='prixProd' type='number' name='prixProd'></div> ";
-            $html .= "<div>poids du produit (0 pour vrac) : <input type='number' name='poidProd'></div> ";
-            $html .= "<div>description du produit : <textarea name='descProd' placeholder='description'></textarea></div> ";
-            $html .= "<div>details du produit : <textarea name='detProd' placeholder='detail'></textarea></div> ";
-            $html .= "<div>lieux du produit :<input name='lieuxProd'></div> ";
-            $html .= "<div>distance du produit :<input type='number' name='distProd'></div> ";
-            $html .= "<div>latitude du produit :<input type='number' name='latProd'></div> ";
-            $html .= "<div>longitude du produit :<input type='number' name='longProd'></div> ";
+            $html .= "<div class=\"connexion3\">nom du produit :<input id='nomProd' name='nomProd'></div> ";
+            $html .= "<div class=\"connexion3\">prix du produit : <input id='prixProd' type='number' name='prixProd'></div> ";
+            $html .= "<div class=\"connexion3\">poids du produit (0 pour vrac) : <input type='number' name='poidProd'></div> ";
+            $html .= "<div class=\"connexion3\">description du produit : <textarea name='descProd' placeholder='description'></textarea></div> ";
+            $html .= "<div class=\"connexion3\">details du produit : <textarea name='detProd' placeholder='detail'></textarea></div> ";
+            $html .= "<div class=\"connexion3\">lieux du produit :<input name='lieuxProd'></div> ";
+            $html .= "<div class=\"connexion3\">distance du produit :<input type='number' name='distProd'></div> ";
+            $html .= "<div class=\"connexion3\">latitude du produit :<input type='number' name='latProd'></div> ";
+            $html .= "<div class=\"connexion3\">longitude du produit :<input type='number' name='longProd'></div> ";
             //$html .= "<div>image du produit :<input type='file' id='file' name='file'/></div> ";
-            $html .= "<div><button name='btnVal' type='submit'>valider</button></div></div></form>";
+            $html .= "<div class=\"aligner\"><button class=\"buttonslot\" name='btnVal' type='submit'>valider</button></div></div></form>";
         }
 
         return $html;

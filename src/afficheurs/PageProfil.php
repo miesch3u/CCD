@@ -91,19 +91,19 @@ class PageProfil extends Afficheur
 
 
                 $res = <<<END
-                <form action="?action=profil" method="POST" xmlns="http://www.w3.org/1999/html">
-                    <label for="nom">Nom</label>
+                <form class="aligner" action="?action=profil" method="POST" xmlns="http://www.w3.org/1999/html">
+                    <label class="connexion3" for="nom">Nom</label>
                     <input type="text" name="nom" placeholder="Votre nom" value="$user->nom"><br>
-                    <label for="prenom">Prenom</label>
+                    <label class="connexion3" for="prenom">Prenom</label>
                     <input type="text" name="prenom" placeholder="Votre prenom" value="$user->prenom"><br>
-                    <label for="email">Email</label>
+                    <label class="connexion3" for="email">Email</label>
                     <input type="email" name="email" placeholder="Votre email" value="$result[0]"><br>
-                    <label for="telephone">Telephone</label>
+                    <label class="connexion3" for="telephone">Telephone</label>
                     <input type="text" name="telephone" placeholder="Votre telephone" value="$resultt[0]"><br>
-                    <input type="submit" value="valider">
+                    <input class="buttonslot2" type="submit" value="valider">
                 </form>
-                <form action="?action=deco" method="POST">
-                    <input type="submit" value="Se déconnecter">
+                <form class="aligner" action="?action=deco" method="POST">
+                    <input class="buttonslot2" type="submit" value="Se déconnecter">
                 </form>
                 END;
 

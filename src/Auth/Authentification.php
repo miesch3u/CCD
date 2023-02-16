@@ -25,7 +25,7 @@ class Auth{
     public static function checkAccessLevel (int $required): void {
         $userLevel = (int) unserialize($_SESSION['user'])->role;
         if ($userLevel < $required){
-            throw new AccessControlException("action non autorisée : droits insuffisants");
+            throw new AccessControlException("Action non autorisée : droits insuffisants");
         }
     }
 
@@ -85,7 +85,7 @@ class Auth{
                 return false;
             }
         }
-        echo "L'enregistrement c'est mal déroulé";
+        echo "L'enregistrement s'est mal déroulé";
         return false;
     }
 }

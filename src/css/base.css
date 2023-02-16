@@ -39,9 +39,8 @@
 }
 
 .soustexte {
-    font-family:Verdana;
-    height:5vw;
-    width:5vw;
+    font-family:Century Gothic;
+    width:60vw;
     font-size:2vw;
     top: 5vw;
     margin:5vw;
@@ -50,7 +49,8 @@
     font-size-adjust:0.5;
 }
 .soustexte1 {
-    font-family:Verdana;
+    font-family:Century Gothic;
+    width:60vw;
     left:25vw;
     font-size:2vw;
     top: 5vw;
@@ -62,7 +62,7 @@
 
 .titretexte {
     font-family:Lucida Handwriting;
-    font-size:4vw;
+    font-size:3vw;
     margin:5vw;
     color: #FDC539;
     resize:none;
@@ -71,7 +71,7 @@
 .titretexte1 {
     font-family:Lucida Handwriting;
     left:25vw;
-    font-size:4vw;
+    font-size:3vw;
     margin:5vw;
     color: #FDC539;
     resize:none;

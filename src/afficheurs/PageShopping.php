@@ -19,7 +19,7 @@ class PageShopping extends Afficheur
             . "<input class=\"cafe2\" id='rechTxt'>"
             . "<select class=\"cafe\" id='filter'><option value='0'>Filtrer</option><option value='1'>Confiseries</option><option value='2'>Boissons</option>"
             . "<option value='3'>Hygiène</option><option value ='4'>Cosmetique</option><option value='5'>Fromages et pâtés</option></select>";
-        if (isset($_SESSION['user'])) if (unserialize($_SESSION['user'])->__get('role')==1){
+        if (isset($_SESSION['user'])) if (unserialize($_SESSION['user'])->__get('role')>1){
             $html.="<a class=\"genoux\" href='?action=newArticle'><button class=\"panier3\" type='button'>Nouvel article</button></a>";
             }
             $html.= "</div><section style='display: flex;justify-content: space-around; flex-direction: column; flex-wrap: wrap'>";

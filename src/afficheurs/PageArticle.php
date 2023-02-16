@@ -31,7 +31,7 @@ class PageArticle extends Afficheur
         $html .= "<style>.mineur {margin-left: 20px;}</style><h1 class=\"prod\">$name</h1><div class=\"mineur\"><p><br>Prix : $prix €<br>Provenance : $lieu<br>Description : <br><br>$desc<br>" .
             "<br>Détails : $det<br>Distance du lieu de production : $discircuit km<br>" .
             "<a href=\"index.php?action=panier&add=$id\"><button class=\"panier\" type='button'>Ajouter au panier</button></a></p>";
-        if (isset($_SESSION['user'])) if (unserialize($_SESSION['user'])->__get('role') == 1) $html .= "<a href='?action=editArticle&id=$id'><button class=\"panier\" type='button'>supprimer</button></a>";
+        if (isset($_SESSION['user'])) if (unserialize($_SESSION['user'])->__get('role') > 1) $html .= "<a href='?action=editArticle&id=$id'><button class=\"panier\" type='button'>supprimer</button></a>";
         $html .= "</div><div class=\"majeur\">
 <img class='image_pdt' src=\"src/img/$id.jpg\" alt=\"Image\">
 </div>";

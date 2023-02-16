@@ -10,7 +10,7 @@ class PageEditArticle extends Afficheur
     public function execute(): string
     {
         if (!isset($_SESSION['user'])) return "<div class='titretexte'>droits insuffisants</div>>";
-        else if (unserialize($_SESSION['user'])->__get('role') == 0) return "<div class='titretexte'>droits insufifsants</div>>";
+        else if (unserialize($_SESSION['user'])->__get('role') <= 1) return "<div class='titretexte'>droits insufifsants</div>>";
         $html = "";
         $db = ConnectionFactory::makeConnection();
         $id = $_GET['id'];

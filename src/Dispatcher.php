@@ -116,7 +116,7 @@ class Dispatcher
         <a href='index.php?action=inscription'>Inscription</a>
         <a href='index.php?action=carte'>Carte</a>
         <a href='index.php?action=information'>Information</a>";
-        if (isset($_SESSION['user'])) if (unserialize($_SESSION['user'])->__get('role')==1) {
+        if (isset($_SESSION['user'])) if (unserialize($_SESSION['user'])->__get('role')>1) {
             $res.="<a href='index.php?action=admin'>admin</a>";
         }
             $res.="</header>

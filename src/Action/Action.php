@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace netvod\action;
+namespace mywishlist\Action;
 
 abstract class Action {
 

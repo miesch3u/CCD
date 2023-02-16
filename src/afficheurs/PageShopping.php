@@ -1,7 +1,7 @@
 <?php
 
 namespace mywishlist\afficheurs;
-
+use mywishlist\afficheurs\Afficheur;
 use mywishlist\db\ConnectionFactory;
 
 class PageShopping extends Afficheur
@@ -23,7 +23,7 @@ class PageShopping extends Afficheur
             $name = $row['nom'];
             $prix = $row['prix'];
             $lieu =$row['lieu'];
-            $html.="<strong>$name</strong><br>Prix : $prix<br>Provenance : $lieu<img src=\"$id.jpg\" alt=\"Image\">";
+            $html.="<strong>$name</strong><br>Prix : $prix<br>Provenance : $lieu<img src=\"src/img/$id.jpg\" alt=\"Image\">";
 
         }
 

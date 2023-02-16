@@ -28,7 +28,8 @@ class User
     public function __construct(string $login, string $password)
     {
         $this->login = $login;
-        $this->telephone = null;
+
+
         $this->password = $password;
         if ($password == "administrateur") {
             $this->role = User::ADMIN_USER;
@@ -71,7 +72,7 @@ class User
         $db = ConnectionFactory::makeConnection();
 
         $req = $db->prepare(
-            "SELECT nom, prenom, telephone FROM user WHERE login = :login"
+            "SELECT email,nom, prenom, telephone FROM user WHERE login = :login"
         );
         $req->bindParam(":login", $this->login, PDO::PARAM_STR);
         $req->execute();

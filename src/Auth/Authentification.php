@@ -46,20 +46,21 @@ class Authentification
         $res = null;
         $db = ConnectionFactory::makeConnection();
         $req = $db->prepare(
-            "SELECT passwd, role FROM user WHERE login ='$login'"
+            "SELECT passwd, email, role FROM user WHERE login ='$login'"
         );
 
         $req->execute();
         $result = $req->fetch();
         if (!self::loginLibre($login)) {
+
             if (password_verify($password, $result[0])) {
-                $res = new User($login, $password, $result[1]);
+                $res = new User($login, $password,  $result['email']);
+
                 $_SESSION['user'] = serialize($res);
             }
         }
         return $res;
     }
-
     /**
      * Methode permettant de s'enregistrer dans la base de données
      * @param string $email

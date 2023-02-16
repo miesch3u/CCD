@@ -15,7 +15,7 @@ class PageShopping extends Afficheur
     {
         $html = "<div style='display: flex; flex-direction: column'><div style='display: flex; flex-direction: row'><button id='rech'type='button'>Rechercher</button>"
             ."<select id='filter'><option value='0'>Filtrer</option><option value='1'>Confiseries</option><option value='2'>Boissons</option>"
-            ."<option value='3'>Hygiène</option><option value='5'>Fromages et pâtés</option></select></div>"
+            ."<option value='3'>Hygiène</option><option value ='4'>Cosmetique</option><option value='5'>Fromages et pâtés</option></select></div>"
             ."<section style='display: flex;justify-content: space-around; flex-direction: column; flex-wrap: wrap'>";
         $req = $this->db->prepare("SELECT id,nom,prix,lieu from produit");
         $req->execute();

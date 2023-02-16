@@ -21,10 +21,10 @@ margin:0;
 }
 
 element-tete {
-    margin:3vw;
+    pagging:1vw;
 }
 
 .image_pdt{
-    height: 100px;
-    width: 100px;
+    height: 25%;
+    width: 84%;
 }

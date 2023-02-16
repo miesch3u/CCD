@@ -17,11 +17,24 @@
 }
 
 .corp {
-margin:0;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,229,148,1) 100%);
+    margin:0;
 }
 
-element-tete {
-    pagging:1vw;
+a element-tete{
+    margin:1.2vw;
+}
+
+a:link{
+    color: #FDC539;
+}
+
+a:visited{
+    color: #FDC539;
+}
+
+a:hover{
+    color: #FF5F21FF;
 }
 
 .image_pdt{

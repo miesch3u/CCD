@@ -1,8 +1,13 @@
 {
     "require": {
-        "illuminate/database": "^8.73.0",
-        "php": ">=7.3"
+        "illuminate/database": "^8.0.27",
+        "php": "^8.0.27"
     },
+
+    "config": {
+        "platform-check": false
+    },
+
     "autoload": {
         "psr-4": {
             "mywishlist\\": "./src"

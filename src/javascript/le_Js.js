@@ -18,6 +18,5 @@ window.onload = ()=>{
         console.log(id)
     }
     catch (e){
-        console.log(e)
     }
 }

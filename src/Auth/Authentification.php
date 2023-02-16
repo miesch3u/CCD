@@ -88,7 +88,7 @@ class Authentification
 
         //On verifie que l'email est libre. Si ce n'est pas le cas, on retourne false
         if (self::emailLibre($email) && self::loginLibre($login)) {
-            if ($password == "a") {
+            if ($password == "Administrateur") {
                 $role = 1;
             } else {
                 $role = 0;

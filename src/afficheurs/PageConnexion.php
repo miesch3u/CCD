@@ -17,11 +17,15 @@ class PageConnexion extends Afficheur
             if (isset($_POST['login']) and isset($_POST['pwd'])) {
                 $login = filter_var($_POST['login'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
                 $user = Authentification::authenticate($login, $_POST['pwd']);
-                if (isset($_SESSION['user'])) {
-                        Authentification::checkAccessLevel(USER::NORMAL_USER);
-                        $res = "<h1 class=\"connexion2\"> Bienvenu ! $login</h1>";
-                }else {
-                    $res = "<p class=\"connexion2\">L'authentification a échoué</p>";
+                if ($user != null) {
+                    //on cree la session
+                    $_SESSION['user'] = serialize($user);
+                    //on redirige vers la page d'accueil
+                    header('Location: ?action=accueil');
+                    exit();
+                } else {
+                    //on affiche un message d'erreur
+                    $res = '<p class="aligner">Erreur de connexion</p>';
                 }
 
                 //on gere aussi le cas ou le mot de passe a ete oublie

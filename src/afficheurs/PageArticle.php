@@ -24,7 +24,10 @@ class PageArticle extends Afficheur
         $name = $row['nom'];
         $prix = $row['prix'];
         $lieu =$row['lieu'];
-        $html.="<div><strong>$name</strong><br>Prix : $prix<br>Provenance : $lieu<img class='image_pdt' src=\"src/img/$id.jpg\" alt=\"Image\"></div>";
+        $desc = $row['description'];
+        $det = $row['detail'];
+        $discircuit = $row['distance'];
+        $html.="<div><h1>$name</h1><br>Prix : $prix<br>Provenance : $lieu<br>Description : <br><br>$desc<br><br>Détails : $det<br>Distance du lieu de production : $discircuit km<img class='image_pdt' src=\"src/img/$id.jpg\" alt=\"Image\"></div>";
 
         return $html;
     }
